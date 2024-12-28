@@ -21,7 +21,7 @@ const DataCard = ({ data }) => {
        <CardImage/>
         {/* {picture && <CardImage src={picture} alt={placeName} />} */}
         <Text>
-        <Line1><Fine1>{dummy.placeName}</Fine1><a href={dummy.url} target="_blank" ><ExternalLink />
+        <Line1><Fine1>{dummy.placeName}</Fine1><a href={dummy.url} target="_blank" rel="noreferrer"><ExternalLink />
         </a></Line1>
         <Line><Fine>— Location: </Fine><Good>{dummy.location}</Good></Line>
         <Line><Fine>— Comment: </Fine><Good>{dummy.comment}</Good></Line>
