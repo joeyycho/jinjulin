@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState }  from 'react'
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Component/Header';
 import styled from 'styled-components';
 
-
 const AnnouncePage = () => {
-  const dummyData = [
-    { id: 1, title: 'First Announcement', createdAt: '2023-01-01', text: 'This is the first announcement.', author: 'Admin' },
-    { id: 2, title: 'Second Announcement', createdAt: '2023-02-01', text: 'This is the second announcement.', author: 'Admin' },
-    // Add more dummy data as needed
-  ];
+const [Data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('/Data/notice.json');
+        setData(response.data);
+      } catch (error) {
+        console.error('Error fetching the data', error);
+      }
+    };
+
+    fetchData();
+  }, []);
         const navigate = useNavigate();
 
         const handleClick = (id) => {
@@ -21,7 +30,7 @@ const AnnouncePage = () => {
             <Header />
             <Title>NOTICE</Title>
             <List>
-              {dummyData.map((announcement) => (
+              {Data.map((announcement) => (
                 <ListDetail key={announcement.id} onClick={() => handleClick(announcement.id)}>
                   <p>{announcement.title}</p>
                   <p>{announcement.createdAt}</p>
