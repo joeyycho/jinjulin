@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 useEffect(() => {
   async function fetchData() {
     const result = await fetch(
-      "https://opensheet.elk.sh/1P8hRYbzVLuwudduB7tMsXYncfZ8YPKcnXoZTlWK9iuE/response"
+      process.env.REACT_APP_LIST_API  // API URL
     )
       .then((res) => res.json())
       .then((data) => {
