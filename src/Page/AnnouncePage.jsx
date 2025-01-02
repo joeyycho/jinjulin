@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Component/Header';
 import styled from 'styled-components';
+import Footer from '../Component/Footer';
 
 const AnnouncePage = () => {
 const [Data, setData] = useState([]);
@@ -28,6 +29,7 @@ const [Data, setData] = useState([]);
         return (
           <Wrapper>
             <Header />
+            <Page>
             <Title>NOTICE</Title>
             <List>
               {Data.map((announcement) => (
@@ -37,6 +39,8 @@ const [Data, setData] = useState([]);
                 </ListDetail>
               ))}
             </List>
+            </Page>
+            <Footer />
           </Wrapper>
         );
       };
@@ -45,6 +49,9 @@ export default AnnouncePage
 
 const Wrapper = styled.div`
   color: #19AC48;
+  display: flex;
+flex-direction: column;   /* 세로 방향으로 정렬 */
+min-height: 100vh;        /* 최소 높이를 화면 크기만큼 */
   `;
 
 const Title = styled.div`
@@ -73,3 +80,7 @@ const Title = styled.div`
   border-bottom: 1px solid #19AC48;
   /* height: 42px; */
   `;
+  
+const Page = styled.div`
+  flex: 1;  /* 남은 공간을 채워주도록 설정 */
+`;

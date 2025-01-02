@@ -90,7 +90,9 @@ const Fine1 = styled.div`
     /* margin-bottom: 20px; */
 `;
 const Good = styled.div`
-        height: 20px;
+  height: 20px;
+display: flex;
+align-items: center;
 `;
 
 const Text1 = styled.div`

@@ -3,6 +3,7 @@ import Header from '../Component/Header'
 // import axios from 'axios'
 import styled from 'styled-components';
 import DataCard from '../Component/DataCard';
+import Footer from '../Component/Footer';
 
 const ListPage = () => {
   const [placeType, setPlaceType] = useState('식당');
@@ -33,27 +34,29 @@ const ListPage = () => {
   }, [placeType, data]);
   
   return (
-    <>
-      <Header />
-      <Type>
-        <label htmlFor="placeType"></label>
-        <select
-          id="placeType"
-          value={placeType}
-          onChange={(e) => setPlaceType(e.target.value)}  // placeType 변경
+  <Wrapper>
+  <Header />
+  <Page>
+  <Type>
+    <label htmlFor="placeType"></label>
+    <select
+      id="placeType"
+      value={placeType}
+      onChange={(e) => setPlaceType(e.target.value)}  // placeType 변경
         >
-          <option value="식당">식당</option>
-          <option value="카페">카페</option>
-          <option value="술집">술집</option>
-          <option value="명소">명소</option>
-          <option value="놀거리">놀거리</option>
-        </select>
-      </Type>
-                <div>
-                {/* <DataCard /> */}
-                  <DataCard data={filteredData} />
-                </div>
-            </>
+    <option value="식당">식당</option>
+    <option value="카페">카페</option>
+    <option value="술집">술집</option>
+    <option value="명소">명소</option>
+    <option value="놀거리">놀거리</option>
+    </select>
+  </Type>
+  <div>
+    <DataCard data={filteredData} />
+    </div>
+  </Page>
+  <Footer />
+  </Wrapper>
         );
     };
 export default ListPage
@@ -71,3 +74,12 @@ const Type = styled.div`
     border: none;
     color: #19AC48;}
   `;
+
+const Page = styled.div`
+flex: 1;  /* 남은 공간을 채워주도록 설정 */
+`
+const Wrapper = styled.div`
+display: flex;
+flex-direction: column;   /* 세로 방향으로 정렬 */
+min-height: 100vh;        /* 최소 높이를 화면 크기만큼 */
+`;

@@ -41,6 +41,7 @@ const AnnouncementDetailPage = () => {
   return (
     <Wrapper>
       <Header />
+      <Page>
       <Title>NOTICE</Title>
       <Text>
         <Line><Fine>제목</Fine><Good>{announcement.title}</Good></Line>
@@ -53,7 +54,7 @@ const AnnouncementDetailPage = () => {
           }}
         />
         <Button onClick={() => navigate(-1)}>목록</Button>  {/* 이전 페이지로 이동 */}
-      </Text>
+      </Text></Page>
       <Footer />
     </Wrapper>
   );
@@ -63,8 +64,13 @@ export default AnnouncementDetailPage;
 
 const Wrapper = styled.div`
   color: #19AC48;
+display: flex;
+flex-direction: column;   /* 세로 방향으로 정렬 */
+min-height: 100vh;        /* 최소 높이를 화면 크기만큼 */
   `;
-
+const Page = styled.div`
+flex: 1;  /* 남은 공간을 채워주도록 설정 */
+`;
 const Title = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
