@@ -27,7 +27,7 @@ const ListPage = () => {
   useEffect(() => {
     if (data.length > 0) {
       const filtered = data.filter(item => item.placeType === placeType);
-      console.log('Filtered Data:', filtered);  // 필터링된 데이터 확인
+      // console.log('Filtered Data:', filtered);  // 필터링된 데이터 확인
       setFilteredData(filtered);
     }
   }, [placeType, data]);

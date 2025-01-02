@@ -12,7 +12,7 @@ useEffect(() => {
         return data;
       });
     setData(result);
-    console.log(result)
+    // console.log(result)
   }
   fetchData();
 }, []);
