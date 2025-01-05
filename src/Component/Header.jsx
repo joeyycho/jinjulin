@@ -17,7 +17,7 @@ const Header = () => {
                 <EasterEgg>
                     <Egg />
                 </EasterEgg>
-                <Logo onClick={() => window.location.href = '/'}>JinJuLin</Logo>
+                <Logo onClick={() => window.location.href = '/'}></Logo>
                 <IconWrapper onClick={toggleModal}>
                     <Icon className={showModal ? 'active' : ''} />
                 </IconWrapper>

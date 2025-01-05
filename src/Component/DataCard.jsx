@@ -45,15 +45,14 @@ const CardBody = styled.div`
   align-items: center;
 `;
 
-const  Text = styled.div`
-    /* margin-left: 1rem;
-    margin-right: 1rem; */
-    width: 100%;
-    font-size: 14px;
-    margin-top: 1rem;
-    /* margin-top: 0.5rem; */
-    `;
-
+const Text = styled.div`
+  width: 100%;
+  font-size: 14px;
+  margin-top: 1rem;
+  word-wrap: break-word;  /* 긴 단어가 있을 경우 자동으로 줄 바꿈 */
+  line-height: 1.5;  /* 줄 간격을 넓혀서 가독성 높이기 */
+  overflow-wrap: break-word;  /* 긴 단어가 줄 바꿈되도록 설정 */
+`;
 const CardImage = styled.img`
   width: 100%;
   height: 100%;  // 높이를 100%로 설정하여 부모 요소에 맞추기
@@ -64,35 +63,45 @@ const CardImage = styled.img`
 `;
 
 const Line = styled.div`
-    display: flex;
-    height: 20px;
+  display: flex;
+  height: auto;  /* 높이 자동 설정으로 텍스트가 길어져도 자연스럽게 내려가게 */
+  margin-bottom: 4px;  /* 각 라인 사이에 간격 추가 */
+  align-items: center;  /* 세로 중앙 정렬 */
 `;
+
 const Line1 = styled.div`
-    display: flex;
-    height: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  height: auto;  /* 높이 자동 설정 */
+  margin-bottom: 20px;
 `;
-    
+
 const Fine = styled.div`
-    width: 100px;
-    text-align: left;
-    align-items: center;
-    display: flex;
-    height: 20px;
-`;   
-const Fine1 = styled.div`
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    font-size: 18px;
-    width: 100%;
-    /* margin-bottom: 20px; */
+  width: 100px;
+  text-align: left;
+  align-items: center;
+  display: flex;
+  height: auto;  /* 텍스트의 길이에 따라 높이를 자동으로 조절 */
+  white-space: nowrap;  /* 텍스트가 한 줄로 나오게 설정 */
 `;
+
+const Fine1 = styled.div`
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 18px;
+  width: 100%;
+`;
+
 const Good = styled.div`
-  height: 20px;
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;  /* 텍스트가 길어지면 줄 바꿈 되도록 설정 */
+  white-space: normal;  /* 텍스트가 줄 바꿈이 가능하도록 설정 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;  /* 긴 텍스트가 자동으로 줄 바꿈 */
+  height: auto;  /* 텍스트가 길어지면 높이를 자동으로 늘림 */
 `;
 
 const Text1 = styled.div`
