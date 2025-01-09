@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../Component/Header'
-// import axios from 'axios'
 import styled from 'styled-components';
 import DataCard from '../Component/DataCard';
 import Footer from '../Component/Footer';

@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom"
 import ListPage from './Page/ListPage';
 import AnnouncePage from './Page/AnnouncePage';
 import AnnouncementDetailPage from './Page/AnnouncementDetailPage';
+import DongPage from './Page/DongPage';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/list" element={<ListPage />} />
         <Route path="/notice" element={<AnnouncePage />} />
         <Route path="/notice/:id" element={<AnnouncementDetailPage />} />
+        <Route path="/map" element={<DongPage/>} />
       </Routes>
   </>
   );

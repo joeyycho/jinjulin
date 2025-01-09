@@ -14,6 +14,9 @@ const Modal = ({ isOpen, setShowModal }) => {
       <LinkStyled to="/notice" onClick={() => setShowModal(false)}>
         공지사항
       </LinkStyled>
+      <LinkStyled to="/map" onClick={() => setShowModal(false)}>
+        지도
+      </LinkStyled>
     </Wrapper>
   )
 }
