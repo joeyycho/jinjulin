@@ -40,8 +40,16 @@ function Map() {
         });
 
         const infoWindow = new naver.maps.InfoWindow({
-          content: `<div style="padding:10px;">${addressItem.placeName}</div>`,
+          content: `
+            <div style="padding:10px 10px 0px 10px; font-weight:bold;">
+              ${addressItem.placeName}
+          </div>
+            <div style="padding:0px 10px 10px 10px; text-align:center;">
+              ${addressItem.placeType}
+            </div>
+          `,
         });
+        
 
         markers.push(marker);
 
