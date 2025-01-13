@@ -39,20 +39,16 @@ const ListPage = () => {
     <Wrapper>
       <Header />
       <Page>
-        <Type>
-          <label htmlFor="placeType"></label>
-          <select
-            id="placeType"
-            value={placeType}
-            onChange={(e) => setPlaceType(e.target.value)} // placeType 변경
-          >
-            <option value="식당">식당</option>
-            <option value="카페">카페</option>
-            <option value="가게">가게</option>
-            <option value="술집">술집</option>
-            <option value="명소">명소</option>
-            <option value="놀거리">놀거리</option>
-          </select>
+      <Type>
+          {['식당', '카페', '가게', '술집', '명소', '놀거리'].map((type) => (
+            <Button
+              key={type}
+              active={placeType === type}
+              onClick={() => setPlaceType(type)} // 버튼 클릭으로 placeType 변경
+            >
+              {type}
+            </Button>
+          ))}
         </Type>
         <div>
           {isLoading ? (
@@ -71,16 +67,10 @@ export default ListPage
 
 const Type = styled.div`
   border-bottom: 1.5px solid #19AC48;
-  margin: 1rem;
-  padding-bottom: 0.5rem;
+  margin: 1.5rem;
   text-align: center;
   color: #19AC48;
-  & select {
-    font-size: 1rem;
-    /* padding: 0.5rem; */
-    margin: 0.5rem;
-    border: none;
-    color: #19AC48;}
+  /* justify-content: space-between; */
   `;
 
 const Page = styled.div`
@@ -95,4 +85,19 @@ const Text = styled.div`
     text-align: center;
     font-size: 14px;
     color: #19AC48;
+`;
+
+const Button = styled.button`
+/* margin: 0 5px; */
+padding: 10px 15px;
+border: none;
+border-top-left-radius: 5px; /* 위쪽 왼쪽 모서리 */
+border-top-right-radius: 5px; /* 위쪽 오른쪽 모서리 */
+background-color: ${(props) => (props.active ? '#19AC48' : 'transparent')};
+color: ${(props) => (props.active ? 'white' : '#19AC48')};;
+font-size: 14px;
+cursor: pointer;
+&:hover {
+  background-color: #19AC48;
+}
 `;
