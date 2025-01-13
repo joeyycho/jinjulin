@@ -11,11 +11,11 @@ const Modal = ({ isOpen, setShowModal }) => {
       <LinkStyled to="/list" onClick={() => setShowModal(false)}>
         List
       </LinkStyled>
-      <LinkStyled to="/notice" onClick={() => setShowModal(false)}>
-        공지사항
-      </LinkStyled>
       <LinkStyled to="/map" onClick={() => setShowModal(false)}>
         지도
+      </LinkStyled>
+      <LinkStyled to="/notice" onClick={() => setShowModal(false)}>
+        공지사항
       </LinkStyled>
     </Wrapper>
   )
@@ -65,6 +65,7 @@ const Wrapper = styled.div`
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease-in-out;
+    z-index: 1;
     
     // Apply animation based on the 'open' class
     animation: ${({ className }) =>

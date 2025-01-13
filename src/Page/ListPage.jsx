@@ -48,6 +48,7 @@ const ListPage = () => {
           >
             <option value="식당">식당</option>
             <option value="카페">카페</option>
+            <option value="가게">가게</option>
             <option value="술집">술집</option>
             <option value="명소">명소</option>
             <option value="놀거리">놀거리</option>

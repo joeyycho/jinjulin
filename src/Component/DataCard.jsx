@@ -56,7 +56,7 @@ const Text = styled.div`
 const CardImage = styled.img`
   width: 100%;
   height: 100%;  // 높이를 100%로 설정하여 부모 요소에 맞추기
-  border-radius: 5px;
+  /* border-radius: 5px; */
   background-color: #f5f5f5;
   object-fit: cover;  // 이미지 비율 유지하면서 부모 크기에 맞게 자르기
   aspect-ratio: 1.5;  // 원하는 비율을 설정 (여기선 1.5:1 비율)

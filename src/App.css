@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+#map {
+  width: 90%;  /* 너비를 화면 크기에 맞게 설정 */
+  height: 300px; /* 원하는 높이로 설정 */
+}

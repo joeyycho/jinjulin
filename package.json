@@ -12,6 +12,7 @@
     "styled-components": "^6.1.13",
     "use-history": "^1.4.1"
   },
+  "proxy": "https://naveropenapi.apigw.ntruss.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
