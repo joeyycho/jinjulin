@@ -90,7 +90,7 @@ const Page = styled.div`
   text-align: center;
   margin-top: 0; /* 헤더와 바로 연결 */
   font-size: 20px;
-  color: #19ac48;
+  color: #19AC48;
   flex: 1;
   position: relative; /* 글자 띠의 부모 */
   overflow: hidden; /* 화면 밖으로 나가는 애니메이션 허용 */
@@ -169,5 +169,5 @@ const WelcomeText = styled.h1`
   transform: translate(-50%, -50%); /* 중앙 정렬 */
   font-size: 1rem; /* 글자 크기 */
   font-weight: bold;
-  color: #19ac48;
+  color: #19AC48;
 `;

@@ -69,11 +69,12 @@ const Type = styled.div`
   border-bottom: 1.5px solid #19AC48;
   margin: 1.5rem;
   text-align: center;
-  color: #19AC48;
-  /* justify-content: space-between; */
+  color: #19AC48
+  /* color: #19AC48; */
   `;
 
 const Page = styled.div`
+padding-top: 63px;
 flex: 1;  /* 남은 공간을 채워주도록 설정 */
 `
 const Wrapper = styled.div`
@@ -91,6 +92,7 @@ const Button = styled.button`
 /* margin: 0 5px; */
 padding: 10px 15px;
 border: none;
+font-weight: 440;
 border-top-left-radius: 5px; /* 위쪽 왼쪽 모서리 */
 border-top-right-radius: 5px; /* 위쪽 오른쪽 모서리 */
 background-color: ${(props) => (props.active ? '#19AC48' : 'transparent')};
@@ -99,5 +101,6 @@ font-size: 14px;
 cursor: pointer;
 &:hover {
   background-color: #19AC48;
+  color: white;
 }
 `;

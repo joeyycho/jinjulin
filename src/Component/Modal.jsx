@@ -59,7 +59,7 @@ const Wrapper = styled.div`
     /* justify-content: center; */
     padding-right: 1rem;
     padding-left: 1rem;
-    padding-top: 3rem;
+    padding-top: 73px;
     text-align: center;
     /* align-items: center; */
     opacity: 0;
@@ -86,4 +86,5 @@ const LinkStyled = styled(Link)`
     margin-top: 10px;
     text-decoration: none;
     border-bottom: 1.5px solid #19AC48;
+    font-weight: 500;
 `;

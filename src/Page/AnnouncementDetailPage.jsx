@@ -70,6 +70,7 @@ min-height: 100vh;        /* 최소 높이를 화면 크기만큼 */
   `;
 const Page = styled.div`
 flex: 1;  /* 남은 공간을 채워주도록 설정 */
+padding-top: 63px;
 `;
 const Title = styled.div`
   margin-left: 1rem;

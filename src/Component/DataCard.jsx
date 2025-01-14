@@ -90,6 +90,7 @@ const Fine1 = styled.div`
   justify-content: center;
   display: flex;
   font-size: 18px;
+  font-weight: 500;
   width: 100%;
 `;
 

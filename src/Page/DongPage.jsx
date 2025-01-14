@@ -93,7 +93,7 @@ const Type = styled.div`
     margin: 0.5rem;
     border: none;
     color: #19AC48;}
-  `;
+    `;
 
 const Page = styled.div`
     flex: 1;  /* 남은 공간을 채워주도록 설정 */
@@ -101,6 +101,7 @@ const Page = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
+    padding-top: 63px;
 `
 const Wrapper = styled.div`
     display: flex;

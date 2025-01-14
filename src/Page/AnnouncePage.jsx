@@ -82,5 +82,6 @@ const Title = styled.div`
   `;
   
 const Page = styled.div`
+padding-top: 63px;
   flex: 1;  /* 남은 공간을 채워주도록 설정 */
 `;
