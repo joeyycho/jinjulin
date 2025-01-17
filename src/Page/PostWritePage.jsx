@@ -223,6 +223,7 @@ const Line = styled.div`
     border: none;
     width: 200px;
     border-bottom: 1px solid #19ac48;
+    border-radius: none;
   }
 `;
 
@@ -233,6 +234,7 @@ const TextBox = styled.div`
   margin-bottom: 1rem;
   width: 300px;
   height: 200px;
+  border-radius: none;
 `;
 
 const Button = styled.div`
