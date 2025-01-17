@@ -1,48 +1,48 @@
-import React, { useEffect, useState } from 'react'
-import DataCard from '../Component/DataCard';
-import styled from 'styled-components';
-import Header from '../Component/Header';
-import Footer from '../Component/Footer';
-import Map from '../Component/Map';
+import React, { useEffect, useState } from "react";
+import DataCard from "../Component/DataCard";
+import styled from "styled-components";
+import Header from "../Component/Header";
+import Footer from "../Component/Footer";
+import Map from "../Component/Map";
 
 const DongPage = () => {
-  const [dong, setDong] = useState('전체');
+  const [dong, setDong] = useState("전체");
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태 추가
 
-    // 데이터 받아오기
-    useEffect(() => {
+  // 데이터 받아오기
+  useEffect(() => {
     async function fetchData() {
-        setIsLoading(true); // 로딩 시작
-        try {
-            const result = await fetch(process.env.REACT_APP_LIST_API); // API URL
-            const jsonData = await result.json();
-            setData(jsonData); // 데이터를 가져와서 상태에 저장
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          } finally {
-            setIsLoading(false); // 로딩 종료
-          }
-        }
-        fetchData();
-      }, []);
-    
-// placeType이 변경될 때마다 데이터를 필터링하여 업데이트
-useEffect(() => {
-  if (data.length > 0) {
-    const filtered = dong === '전체' ? data : data.filter((item) => item.dong === dong);
-    setFilteredData(filtered);
-  }
-}, [dong, data]);
+      setIsLoading(true); // 로딩 시작
+      try {
+        const result = await fetch(process.env.REACT_APP_LIST_API); // API URL
+        const jsonData = await result.json();
+        setData(jsonData); // 데이터를 가져와서 상태에 저장
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setIsLoading(false); // 로딩 종료
+      }
+    }
+    fetchData();
+  }, []);
 
+  // placeType이 변경될 때마다 데이터를 필터링하여 업데이트
+  useEffect(() => {
+    if (data.length > 0) {
+      const filtered =
+        dong === "전체" ? data : data.filter((item) => item.dong === dong);
+      setFilteredData(filtered);
+    }
+  }, [dong, data]);
 
   return (
     <Wrapper>
-      <Header/>
+      <Header />
       <Page>
         <Map />
-      <Type>
+        <Type>
           <label htmlFor="dong"></label>
           <select
             id="dong"
@@ -74,42 +74,45 @@ useEffect(() => {
           )}
         </div>
       </Page>
-      <Footer/>
+      <Footer />
     </Wrapper>
-  )
-}
+  );
+};
 
-export default DongPage
+export default DongPage;
 
 const Type = styled.div`
-  border-bottom: 1.5px solid #19AC48;
+  border-bottom: 1.5px solid #19ac48;
   margin: 1rem;
   padding-bottom: 0.5rem;
   text-align: center;
-  color: #19AC48;
+  color: #19ac48;
   & select {
     font-size: 1rem;
     /* padding: 0.5rem; */
     margin: 0.5rem;
     border: none;
-    color: #19AC48;}
-    `;
+    color: #19ac48;
+  }
+`;
 
 const Page = styled.div`
-    flex: 1;  /* 남은 공간을 채워주도록 설정 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    padding-top: 63px;
-`
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;   /* 세로 방향으로 정렬 */
-    min-height: 100vh;        /* 최소 높이를 화면 크기만큼 */
+  flex: 1; /* 남은 공간을 채워주도록 설정 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 63px;
 `;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬 */
+  min-height: 100vh; /* 최소 높이를 화면 크기만큼 */
+`;
+
 const Text = styled.div`
-    text-align: center;
-    font-size: 14px;
-    color: #19AC48;
+  text-align: center;
+  font-size: 14px;
+  color: #19ac48;
 `;

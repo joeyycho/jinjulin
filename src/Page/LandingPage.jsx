@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import Footer from '../Component/Footer';
-import Header from '../Component/Header';
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import Footer from "../Component/Footer";
+import Header from "../Component/Header";
 
 const MAX_LETTERS = 20; // 글자 띠 최대 개수
 const ADD_DELAY = 100; // 글자 띠 추가 간격 (ms)
 
 const getRandomColor = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
+  const letters = "0123456789ABCDEF";
+  let color = "#";
   for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
@@ -47,18 +47,20 @@ const LandingPage = () => {
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [isAdding]);
 
   return (
     <Wrapper>
-      <HeaderWrapper><Header /></HeaderWrapper>
+      <HeaderWrapper>
+        <Header />
+      </HeaderWrapper>
       <Page>
-      <WelcomeText>Welcome to JinJu</WelcomeText>
+        <WelcomeText>Welcome to JinJu</WelcomeText>
         {letters.map((letter) => (
           <LetterRing
             key={letter.id}
@@ -90,7 +92,7 @@ const Page = styled.div`
   text-align: center;
   margin-top: 0; /* 헤더와 바로 연결 */
   font-size: 20px;
-  color: #19AC48;
+  color: #19ac48;
   flex: 1;
   position: relative; /* 글자 띠의 부모 */
   overflow: hidden; /* 화면 밖으로 나가는 애니메이션 허용 */
@@ -151,10 +153,10 @@ const LetterRing = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: ${expandAnimation} 3s ease-out forwards, ${bounceAnimation} 1s ease-out 3s forwards;
+  animation: ${expandAnimation} 3s ease-out forwards,
+    ${bounceAnimation} 1s ease-out 3s forwards;
   color: ${({ color }) => color};
 `;
-
 
 const Text = styled.div`
   position: absolute;
@@ -162,6 +164,7 @@ const Text = styled.div`
   font-weight: bold;
   transition: transform 0.2s ease-out;
 `;
+
 const WelcomeText = styled.h1`
   position: absolute;
   top: 50%;
@@ -169,5 +172,5 @@ const WelcomeText = styled.h1`
   transform: translate(-50%, -50%); /* 중앙 정렬 */
   font-size: 1rem; /* 글자 크기 */
   font-weight: bold;
-  color: #19AC48;
+  color: #19ac48;
 `;

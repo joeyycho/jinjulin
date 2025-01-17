@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import Header from '../Component/Header'
-import styled from 'styled-components';
-import DataCard from '../Component/DataCard';
-import Footer from '../Component/Footer';
+import React, { useEffect, useState } from "react";
+import Header from "../Component/Header";
+import styled from "styled-components";
+import DataCard from "../Component/DataCard";
+import Footer from "../Component/Footer";
 
 const ListPage = () => {
-  const [placeType, setPlaceType] = useState('식당');
+  const [placeType, setPlaceType] = useState("식당");
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태 추가
@@ -19,7 +19,7 @@ const ListPage = () => {
         const jsonData = await result.json();
         setData(jsonData); // 데이터를 가져와서 상태에 저장
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       } finally {
         setIsLoading(false); // 로딩 종료
       }
@@ -39,8 +39,8 @@ const ListPage = () => {
     <Wrapper>
       <Header />
       <Page>
-      <Type>
-          {['식당', '카페', '가게', '술집', '명소', '놀거리'].map((type) => (
+        <Type>
+          {["식당", "카페", "가게", "술집", "명소", "놀거리"].map((type) => (
             <Button
               key={type}
               active={placeType === type}
@@ -63,44 +63,44 @@ const ListPage = () => {
   );
 };
 
-export default ListPage
+export default ListPage;
 
 const Type = styled.div`
-  border-bottom: 1.5px solid #19AC48;
+  border-bottom: 1.5px solid #19ac48;
   margin: 1.5rem;
   text-align: center;
-  color: #19AC48
+  color: #19ac48;
   /* color: #19AC48; */
-  `;
+`;
 
 const Page = styled.div`
-padding-top: 63px;
-flex: 1;  /* 남은 공간을 채워주도록 설정 */
-`
+  padding-top: 63px;
+  flex: 1; /* 남은 공간을 채워주도록 설정 */
+`;
 const Wrapper = styled.div`
-display: flex;
-flex-direction: column;   /* 세로 방향으로 정렬 */
-min-height: 100vh;        /* 최소 높이를 화면 크기만큼 */
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 정렬 */
+  min-height: 100vh; /* 최소 높이를 화면 크기만큼 */
 `;
 const Text = styled.div`
-    text-align: center;
-    font-size: 14px;
-    color: #19AC48;
+  text-align: center;
+  font-size: 14px;
+  color: #19ac48;
 `;
 
 const Button = styled.button`
-/* margin: 0 5px; */
-padding: 10px 15px;
-border: none;
-font-weight: 440;
-border-top-left-radius: 5px; /* 위쪽 왼쪽 모서리 */
-border-top-right-radius: 5px; /* 위쪽 오른쪽 모서리 */
-background-color: ${(props) => (props.active ? '#19AC48' : 'transparent')};
-color: ${(props) => (props.active ? 'white' : '#19AC48')};;
-font-size: 14px;
-cursor: pointer;
-&:hover {
-  background-color: #19AC48;
-  color: white;
-}
+  /* margin: 0 5px; */
+  padding: 10px 15px;
+  border: none;
+  font-weight: 440;
+  border-top-left-radius: 5px; /* 위쪽 왼쪽 모서리 */
+  border-top-right-radius: 5px; /* 위쪽 오른쪽 모서리 */
+  background-color: ${(props) => (props.active ? "#19AC48" : "transparent")};
+  color: ${(props) => (props.active ? "white" : "#19AC48")};
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
+    background-color: #19ac48;
+    color: white;
+  }
 `;
