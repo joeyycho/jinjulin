@@ -99,7 +99,7 @@ const Text = styled.div`
 `;
 
 const Button = styled.button`
-  width: 200px;
+  width: auto;
   height: 40px;
   margin: 20px;
   margin-bottom: 60px;
