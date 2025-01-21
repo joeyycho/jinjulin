@@ -47,6 +47,7 @@ const DongPage = () => {
           <select
             id="dong"
             value={dong}
+            style={{ backgroundColor: "transparent" }}
             onChange={(e) => setDong(e.target.value)} // placeType 변경
           >
             <option value="전체">전체</option>
@@ -82,17 +83,17 @@ const DongPage = () => {
 export default DongPage;
 
 const Type = styled.div`
-  border-bottom: 1.5px solid #19ac48;
+  border-bottom: 1.5px solid #636038;
   margin: 1rem;
   padding-bottom: 0.5rem;
   text-align: center;
-  color: #19ac48;
+  color: #636038;
   & select {
     font-size: 1rem;
     /* padding: 0.5rem; */
     margin: 0.5rem;
     border: none;
-    color: #19ac48;
+    color: #636038;
   }
 `;
 
@@ -109,10 +110,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column; /* 세로 방향으로 정렬 */
   min-height: 100vh; /* 최소 높이를 화면 크기만큼 */
+  background-color: #eae0d6;
 `;
 
 const Text = styled.div`
   text-align: center;
   font-size: 14px;
-  color: #19ac48;
+  color: #636038;
 `;

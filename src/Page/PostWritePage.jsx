@@ -143,10 +143,11 @@ const PostWritePage = () => {
 export default PostWritePage;
 
 const Wrapper = styled.div`
-  color: #19ac48;
+  color: #636038;
   display: flex;
   flex-direction: column; /* 세로 방향으로 정렬 */
   min-height: 100vh; /* 최소 높이를 화면 크기만큼 */
+  background-color: #eae0d6;
 `;
 
 const Page = styled.div`
@@ -162,7 +163,7 @@ const Title = styled.div`
   font-size: 20px;
   text-align: center;
   font-weight: 300;
-  /* border-bottom: 1px solid #19AC48; */
+  /* border-bottom: 1px solid #636038; */
 `;
 
 const Fine = styled.div`
@@ -194,15 +195,15 @@ const Text = styled.div`
     margin-top: 30px;
     font-weight: 500;
     cursor: pointer;
-    background-color: #19ac48;
+    background-color: #636038;
     color: white;
     width: 100%;
     font-size: 14px;
-    border: 1px solid #19ac48;
+    border: 1px solid #636038;
     &:hover {
       background: transparent;
-      color: #19ac48;
-      border: 1px solid #19ac48;
+      color: #636038;
+      border: 1px solid #636038;
     }
   }
 `;
@@ -222,13 +223,13 @@ const Line = styled.div`
     height: 20px;
     border: none;
     width: 200px;
-    border-bottom: 1px solid #19ac48;
+    border-bottom: 1px solid #636038;
     border-radius: none;
   }
 `;
 
 const TextBox = styled.div`
-  border: 1px solid #19ac48;
+  border: 1px solid #636038;
   padding: 1rem;
   resize: none;
   margin-bottom: 1rem;
@@ -241,7 +242,7 @@ const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #19ac48;
+  border: 1px solid #636038;
   text-align: center;
   height: 40px;
   margin-top: 30px;
@@ -249,10 +250,10 @@ const Button = styled.div`
   font-size: 14px;
   cursor: pointer;
   background-color: transparent;
-  color: #19ac48;
+  color: #636038;
   width: 100%;
   /* &:hover {
-    background: #19ac48;
+    background: #636038;
     color: white;
   } */
 `;

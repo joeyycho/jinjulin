@@ -66,11 +66,11 @@ const ListPage = () => {
 export default ListPage;
 
 const Type = styled.div`
-  border-bottom: 1.5px solid #19ac48;
+  border-bottom: 1.5px solid #636038;
   margin: 1.5rem;
   text-align: center;
-  color: #19ac48;
-  /* color: #19AC48; */
+  color: #636038;
+  /* color: #636038; */
 `;
 
 const Page = styled.div`
@@ -81,11 +81,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column; /* 세로 방향으로 정렬 */
   min-height: 100vh; /* 최소 높이를 화면 크기만큼 */
+  background-color: #eae0d6;
 `;
 const Text = styled.div`
   text-align: center;
   font-size: 14px;
-  color: #19ac48;
+  color: #636038;
 `;
 
 const Button = styled.button`
@@ -95,12 +96,12 @@ const Button = styled.button`
   font-weight: 440;
   border-top-left-radius: 5px; /* 위쪽 왼쪽 모서리 */
   border-top-right-radius: 5px; /* 위쪽 오른쪽 모서리 */
-  background-color: ${(props) => (props.active ? "#19AC48" : "transparent")};
-  color: ${(props) => (props.active ? "white" : "#19AC48")};
+  background-color: ${(props) => (props.active ? "#636038" : "transparent")};
+  color: ${(props) => (props.active ? "white" : "#636038")};
   font-size: 14px;
   cursor: pointer;
   &:hover {
-    background-color: #19ac48;
+    background-color: #636038;
     color: white;
   }
 `;

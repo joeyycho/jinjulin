@@ -5,7 +5,7 @@ const Egg = () => {
   return (
     <Wrapper>
       <svg
-        fill="#19AC48"
+        fill="#636038"
         width="60px"
         height="60px"
         viewBox="0 0 256 256"

@@ -76,10 +76,11 @@ const AnnouncementDetailPage = () => {
 export default AnnouncementDetailPage;
 
 const Wrapper = styled.div`
-  color: #19ac48;
+  color: #636038;
   display: flex;
   flex-direction: column; /* 세로 방향으로 정렬 */
   min-height: 100vh; /* 최소 높이를 화면 크기만큼 */
+  background-color: #eae0d6;
 `;
 const Page = styled.div`
   flex: 1; /* 남은 공간을 채워주도록 설정 */
@@ -93,7 +94,7 @@ const Title = styled.div`
   font-size: 20px;
   text-align: center;
   font-weight: 300;
-  /* border-bottom: 1px solid #19AC48; */
+  /* border-bottom: 1px solid #636038; */
 `;
 const Fine = styled.div`
   width: 80px;
@@ -124,7 +125,7 @@ const Line = styled.div`
 `;
 
 const TextBox = styled.div`
-  border: 1px solid #19ac48;
+  border: 1px solid #636038;
   padding: 1rem;
   margin-top: 1rem;
 `;
@@ -132,7 +133,7 @@ const Button = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #19ac48;
+  border: 1px solid #636038;
   text-align: center;
   height: 40px;
   margin-top: 30px;

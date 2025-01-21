@@ -8,13 +8,15 @@ import DongPage from './Page/DongPage';
 import PostPage from './Page/PostPage';
 import PostWritePage from './Page/PostWritePage';
 import PostDetail from './Page/PostDetail';
+import HomePage from './Page/HomePage';
 
 
 function App() {
   return (
   <>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/welcome" element={<LandingPage />} />
         <Route path="/list" element={<ListPage />} />
         <Route path="/notice" element={<AnnouncePage />} />
         <Route path="/notice/:id" element={<AnnouncementDetailPage />} />
