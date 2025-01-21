@@ -13,7 +13,8 @@ const Header = () => {
   return (
     <>
       <Wrapper>
-        <EasterEgg onClick={() => (window.location.href = "/welcome")}>
+        <EasterEgg>
+          {/* onClick={() => (window.location.href = "/welcome")} */}
           <img src="/image/seashellwp.png" alt="shell" />
         </EasterEgg>
         <Logo onClick={() => (window.location.href = "/")}>
