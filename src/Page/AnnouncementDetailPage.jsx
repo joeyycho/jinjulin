@@ -84,7 +84,7 @@ const Wrapper = styled.div`
 `;
 const Page = styled.div`
   flex: 1; /* 남은 공간을 채워주도록 설정 */
-  padding-top: 63px;
+  /* padding-top: 63px; */
 `;
 const Title = styled.div`
   margin-left: 1rem;

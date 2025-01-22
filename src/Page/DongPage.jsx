@@ -103,7 +103,7 @@ const Page = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-  padding-top: 63px;
+  /* padding-top: 63px; */
 `;
 
 const Wrapper = styled.div`
