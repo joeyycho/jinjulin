@@ -73,6 +73,7 @@ const CardImage = styled.img`
   background-color: #f5f5f5;
   object-fit: cover; // 이미지 비율 유지하면서 부모 크기에 맞게 자르기
   aspect-ratio: 1.5; // 원하는 비율을 설정 (여기선 1.5:1 비율)
+  border: 2px solid #636038;
 `;
 
 const Line = styled.div`
