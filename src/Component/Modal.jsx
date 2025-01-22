@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes, css } from "styled-components";
 
 const Modal = ({ isOpen, setShowModal }) => {
+  // 모달이 열렸을 때 body 스크롤 비활성화
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; // 스크롤 비활성화
+    } else {
+      document.body.style.overflow = "auto"; // 스크롤 활성화
+    }
+
+    // 컴포넌트 언마운트 시 스크롤 복구
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
     <>
       <Wrapper className={isOpen ? "open" : ""}>
@@ -60,6 +74,7 @@ const Wrapper = styled.div`
   top: 0;
   right: 0;
   left: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -67,6 +82,7 @@ const Wrapper = styled.div`
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
   z-index: 1; /* Modal의 z-index를 낮게 설정 */
+  overflow: hidden; /* 스크롤 비활성화 */
 
   & img {
     width: 100%;
@@ -89,12 +105,10 @@ const Wrapper = styled.div`
 
 const LinkStyled = styled(Link)`
   font-size: 20px;
-  /* font-family: "Yeongdeok Haeparang"; */
   color: #636038;
   height: 30px;
   margin-top: 15px;
   text-decoration: none;
-  /* border-bottom: 1.5px solid white; */
   font-weight: 500;
 `;
 

@@ -36,14 +36,9 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  /* border-bottom: 1px solid #e0e0e0; */
-  /* background: #70b8c6; */
-  /* color: white; */
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
 `;
 
 const IconWrapper = styled.div`
@@ -54,7 +49,7 @@ const IconWrapper = styled.div`
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  z-index: 10; /* Modal보다 높은 z-index로 설정 */
+  z-index: 2; /* Modal보다 높은 z-index로 설정 */
 `;
 
 const Icon = styled.div`

@@ -12,7 +12,9 @@ const HomePage = () => {
 
   return (
     <Wrapper>
-      <Header />
+      <HeaderWrapper>
+        <Header />
+      </HeaderWrapper>
       <Page>
         <Waves />
         <Contents>
@@ -70,6 +72,10 @@ const Wrapper = styled.div`
   flex-direction: column; /* 세로 방향으로 정렬 */
   min-height: 100vh; /* 최소 높이를 화면 크기만큼 */
   background-color: #eae0d6;
+`;
+
+const HeaderWrapper = styled.div`
+  background-color: #70b8c6;
 `;
 
 const Page = styled.div``;
