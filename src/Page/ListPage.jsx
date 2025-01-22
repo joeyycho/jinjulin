@@ -9,6 +9,8 @@ const ListPage = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태 추가
+  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 추가
+  const itemsPerPage = 5; // 페이지당 아이템 수
 
   // 데이터 받아오기
   useEffect(() => {
@@ -37,6 +39,14 @@ const ListPage = () => {
     }
   }, [placeType, data]);
 
+  // 현재 페이지에 해당하는 데이터 계산
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentData = filteredData.slice(startIndex, endIndex);
+
+  // 총 페이지 수 계산
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
   return (
     <Wrapper>
       <Header />
@@ -46,7 +56,10 @@ const ListPage = () => {
             <Button
               key={type}
               active={placeType === type}
-              onClick={() => setPlaceType(type)} // 버튼 클릭으로 placeType 변경
+              onClick={() => {
+                setPlaceType(type);
+                setCurrentPage(1);
+              }}
             >
               {type}
             </Button>
@@ -56,7 +69,27 @@ const ListPage = () => {
           {isLoading ? (
             <Text>데이터를 받아오고 있습니다...</Text> // 로딩 중일 때 표시
           ) : (
-            <DataCard data={filteredData} />
+            <>
+              <DataCard data={currentData} />
+              {/* 페이지네이션 버튼 */}
+              <Pagination>
+                <Button1
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage((prev) => prev - 1)}
+                >
+                  이전
+                </Button1>
+                <Text>
+                  <span>{currentPage}</span> / {totalPages}
+                </Text>
+                <Button1
+                  disabled={currentPage === totalPages}
+                  onClick={() => setCurrentPage((prev) => prev + 1)}
+                >
+                  다음
+                </Button1>
+              </Pagination>
+            </>
           )}
         </div>
       </Page>
@@ -72,13 +105,13 @@ const Type = styled.div`
   margin: 1.5rem;
   text-align: center;
   color: #636038;
-  /* color: #636038; */
 `;
 
 const Page = styled.div`
   /* padding-top: 63px; */
   flex: 1; /* 남은 공간을 채워주도록 설정 */
 `;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column; /* 세로 방향으로 정렬 */
@@ -89,6 +122,9 @@ const Text = styled.div`
   text-align: center;
   font-size: 14px;
   color: #636038;
+  & span {
+    color: #444226;
+  }
 `;
 
 const Button = styled.button`
@@ -106,4 +142,23 @@ const Button = styled.button`
     background-color: #636038;
     color: white;
   }
+`;
+
+const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  color: #636038;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const Button1 = styled.button`
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  font-weight: 440;
+  background-color: transparent;
+  color: #636038;
 `;
