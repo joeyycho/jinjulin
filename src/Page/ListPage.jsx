@@ -17,7 +17,9 @@ const ListPage = () => {
       try {
         const result = await fetch(process.env.REACT_APP_LIST_API); // API URL
         const jsonData = await result.json();
-        setData(jsonData); // 데이터를 가져와서 상태에 저장
+        // 데이터를 랜덤하게 섞기
+        const shuffledData = jsonData.sort(() => Math.random() - 0.5);
+        setData(shuffledData); // 섞은 데이터를 상태에 저장
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
