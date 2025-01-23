@@ -12,6 +12,7 @@ const ListPage = () => {
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태 추가
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 추가
   const itemsPerPage = 5; // 페이지당 아이템 수
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // 데이터 받아오기
   useEffect(() => {
@@ -49,53 +50,65 @@ const ListPage = () => {
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   return (
-    <Wrapper>
-      <Header />
-      <Page>
-        <Type>
-          {["식당", "카페", "가게", "술집", "명소", "놀거리"].map((type) => (
-            <Button
-              key={type}
-              active={placeType === type}
-              onClick={() => {
-                setPlaceType(type);
-                setCurrentPage(1);
-              }}
-            >
-              {type}
-            </Button>
-          ))}
-        </Type>
-        <div>
-          {isLoading ? (
-            <Text>데이터를 받아오고 있습니다...</Text> // 로딩 중일 때 표시
-          ) : (
-            <>
-              <DataCard data={currentData} />
-              {/* 페이지네이션 버튼 */}
-              <Pagination>
-                <Button1
-                  disabled={currentPage === 1}
-                  onClick={() => setCurrentPage((prev) => prev - 1)}
-                >
-                  이전
-                </Button1>
-                <Text>
-                  <span>{currentPage}</span> / {totalPages}
-                </Text>
-                <Button1
-                  disabled={currentPage === totalPages}
-                  onClick={() => setCurrentPage((prev) => prev + 1)}
-                >
-                  다음
-                </Button1>
-              </Pagination>
-            </>
-          )}
-        </div>
-      </Page>
-      <Footer />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Header />
+        <Page>
+          <Type>
+            {["식당", "카페", "가게", "술집", "명소", "놀거리"].map((type) => (
+              <Button
+                key={type}
+                active={placeType === type}
+                onClick={() => {
+                  setPlaceType(type);
+                  setCurrentPage(1);
+                }}
+              >
+                {type}
+              </Button>
+            ))}
+          </Type>
+          <div>
+            {isLoading ? (
+              <Text>데이터를 받아오고 있습니다...</Text> // 로딩 중일 때 표시
+            ) : (
+              <>
+                {placeType === "식당" && (
+                  <ButtonWrapper>
+                    <Button3
+                      onClick={() => {
+                        setIsModalOpen(true);
+                      }}
+                    >
+                      𓇼 ⋆.˚ 오늘 뭐 먹지? ⋆.˚ 𓆡
+                    </Button3>
+                  </ButtonWrapper>
+                )}
+                <DataCard data={currentData} />
+                {/* 페이지네이션 버튼 */}
+                <Pagination>
+                  <Button1
+                    disabled={currentPage === 1}
+                    onClick={() => setCurrentPage((prev) => prev - 1)}
+                  >
+                    이전
+                  </Button1>
+                  <Text>
+                    <span>{currentPage}</span> / {totalPages}
+                  </Text>
+                  <Button1
+                    disabled={currentPage === totalPages}
+                    onClick={() => setCurrentPage((prev) => prev + 1)}
+                  >
+                    다음
+                  </Button1>
+                </Pagination>
+              </>
+            )}
+          </div>
+        </Page>
+        <Footer />
+      </Wrapper>
       <ModalMenu isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
