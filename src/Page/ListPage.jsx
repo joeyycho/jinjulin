@@ -3,6 +3,7 @@ import Header from "../Component/Header";
 import styled from "styled-components";
 import DataCard from "../Component/DataCard";
 import Footer from "../Component/Footer";
+import ModalMenu from "../Component/ModalMenu";
 
 const ListPage = () => {
   const [placeType, setPlaceType] = useState("식당");
@@ -95,6 +96,8 @@ const ListPage = () => {
       </Page>
       <Footer />
     </Wrapper>
+      <ModalMenu isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </>
   );
 };
 
@@ -161,4 +164,28 @@ const Button1 = styled.button`
   font-weight: 440;
   background-color: transparent;
   color: #636038;
+`;
+
+const Button3 = styled.button`
+  width: auto;
+  height: 40px;
+  background-color: #636038;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Yeongdeok Haeparang";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #444226;
+  }
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;
