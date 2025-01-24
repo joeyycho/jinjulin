@@ -76,7 +76,7 @@ const ModalMenu = ({ isOpen, onClose }) => {
           <p>Loading...</p>
         ) : !filter ? (
           <AnimatedText>
-            {Array.from("𓇼 𓆉 𓆝 𓆡⋆.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼").map((char, index) => (
+            {Array.from("𓇼⋆.˚버튼을 눌러보세요𓆝 𓆡⋆.˚").map((char, index) => (
               <AnimatedLetter key={index} delay={index * 0.1}>
                 {char.trim() ? char : "\u00A0"}
               </AnimatedLetter>
