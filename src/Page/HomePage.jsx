@@ -6,6 +6,7 @@ import Waves from "../Component/Waves";
 import { Left, Right } from "../Component/Text";
 import Nav from "../Component/Nav";
 import ModalMenu from "../Component/ModalMenu";
+import { BREAKPOINT_PC, mediaQueries } from "../mediaQuery";
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -102,8 +103,12 @@ const Contents = styled.div`
   & img {
     width: 100%;
     margin: 20px;
+    ${mediaQueries(BREAKPOINT_PC)} {
+      width: 50%;
+    }
   }
 `;
+
 const Text = styled.div`
   color: #636038;
   font-family: "Yeongdeok Haeparang";
