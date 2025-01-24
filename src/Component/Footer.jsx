@@ -4,19 +4,26 @@ import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <Wrapper>
-      <Text>
-        <Link to="/notice">공지사항 / </Link>
-        <a
-          href="https://www.jinju.go.kr/main.web"
-          target="_blank"
-          rel="noreferrer"
-        >
-          진주시청 사이트 바로가기
-        </a>
-      </Text>
-      <Text>© 2025 JinJuLin. All rights reserved.</Text>
-    </Wrapper>
+    <>
+      <img
+        src="/image/footerimg.png"
+        alt="footer"
+        style={{ width: "100%", marginTop: "50px" }}
+      />
+      <Wrapper>
+        <Text>
+          <Link to="/notice">공지사항 / </Link>
+          <a
+            href="https://www.jinju.go.kr/main.web"
+            target="_blank"
+            rel="noreferrer"
+          >
+            진주시청 사이트 바로가기
+          </a>
+        </Text>
+        <Text>© 2025 JinJuLin. All rights reserved.</Text>
+      </Wrapper>
+    </>
   );
 };
 
@@ -37,5 +44,5 @@ const Wrapper = styled.div`
   position: relative; /* 상대적인 위치 */
   bottom: 0; /* 페이지 하단에 배치 */
   width: 100%;
-  margin-bottom: 10px;
+  background-color: #edc192;
 `;
