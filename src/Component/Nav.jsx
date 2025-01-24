@@ -35,11 +35,13 @@ const NavBar = styled.nav`
   text-align: left;
   pointer-events: none; /* Prevent interactions */
   z-index: 1;
+  width: auto;
 
   a {
     pointer-events: auto; /* Allow link interaction */
     color: #636038;
     text-decoration: none;
+    width: auto;
   }
 `;
 
@@ -54,6 +56,7 @@ const NavItem = styled.div`
   cursor: pointer;
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  width: auto;
 
   &:hover {
     background-color: #636038;
