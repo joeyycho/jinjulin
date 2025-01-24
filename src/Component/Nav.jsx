@@ -44,22 +44,25 @@ const NavBar = styled.nav`
     text-decoration: none;
     width: auto;
     height: auto;
+    :hover {
+      color: white;
+    }
   }
 `;
 
 const NavItem = styled.div`
-  padding: 10px 10px;
+  padding: 8px 8px;
   border: none;
   font-weight: 440;
   text-decoration: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   width: auto;
-  height: auto;
+  height: 25px;
   /* background-color: white; */
 
   &:hover {
@@ -76,12 +79,12 @@ const NavItem2 = styled.div`
   text-decoration: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   width: auto;
-  height: 50px;
+  height: 30px;
   /* background-color: white; */
 
   &:hover {
@@ -98,12 +101,12 @@ const NavItem3 = styled.div`
   text-decoration: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   width: auto;
-  height: 60px;
+  height: 50px;
   /* background-color: white; */
 
   &:hover {
@@ -120,12 +123,12 @@ const NavItem4 = styled.div`
   text-decoration: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   width: auto;
-  height: 70px;
+  height: 60px;
   /* background-color: white; */
 
   &:hover {
