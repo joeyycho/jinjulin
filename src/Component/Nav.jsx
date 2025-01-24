@@ -9,12 +9,12 @@ const Nav = () => {
         <NavItem>
           <Link to="/list">LIST</Link>
         </NavItem>
-        <NavItem>
+        <NavItem2>
           <Link to="/map">지도</Link>
-        </NavItem>
-        <NavItem>
+        </NavItem2>
+        <NavItem3>
           <Link to="/post">게시판</Link>
-        </NavItem>
+        </NavItem3>
         <NavItem4>
           <Link to="/notice">공지사항</Link>
         </NavItem4>
@@ -60,6 +60,50 @@ const NavItem = styled.div`
   text-orientation: mixed;
   width: auto;
   height: auto;
+  /* background-color: white; */
+
+  &:hover {
+    background-color: #636038;
+    color: white;
+    font-weight: 550;
+  }
+`;
+
+const NavItem2 = styled.div`
+  padding: 10px 10px;
+  border: none;
+  font-weight: 440;
+  text-decoration: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  width: auto;
+  height: 50px;
+  /* background-color: white; */
+
+  &:hover {
+    background-color: #636038;
+    color: white;
+    font-weight: 550;
+  }
+`;
+
+const NavItem3 = styled.div`
+  padding: 10px 10px;
+  border: none;
+  font-weight: 440;
+  text-decoration: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  width: auto;
+  height: 60px;
   /* background-color: white; */
 
   &:hover {
