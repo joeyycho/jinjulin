@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [showModal, setShowModal] = React.useState(false);
@@ -14,8 +15,9 @@ const Header = () => {
     <>
       <Wrapper>
         <EasterEgg>
-          {/* onClick={() => (window.location.href = "/welcome")} */}
-          <img src="/image/seashellwp.png" alt="shell" />
+          <Link to="/welcome">
+            <img src="/image/seashellwp.png" alt="shell" />
+          </Link>
         </EasterEgg>
         <Logo onClick={() => (window.location.href = "/")}>
           <img src="/image/Logo1.png" alt="Logo" />
@@ -49,7 +51,7 @@ const IconWrapper = styled.div`
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  z-index: 2; /* Modal보다 높은 z-index로 설정 */
+  z-index: 3; /* Modal보다 높은 z-index로 설정 */
 `;
 
 const Icon = styled.div`

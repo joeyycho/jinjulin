@@ -4,6 +4,7 @@ import Footer from "../Component/Footer";
 import styled from "styled-components";
 import Waves from "../Component/Waves";
 import { Left, Right } from "../Component/Text";
+import Nav from "../Component/Nav";
 
 const HomePage = () => {
   const handleButtonClick = () => {
@@ -17,6 +18,7 @@ const HomePage = () => {
       </HeaderWrapper>
       <Page>
         <Waves />
+        <Nav />
         <Contents>
           <Left>
             진주를 잘 모르는 친구에게 진주에 대해 알려주고 싶은데, 어떻게

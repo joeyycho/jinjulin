@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Footer = () => {
   return (
     <Wrapper>
       <Text>
-        <a href="/notice">공지사항 / </a>
+        <Link to="/notice">공지사항 / </Link>
         <a
           href="https://www.jinju.go.kr/main.web"
           target="_blank"

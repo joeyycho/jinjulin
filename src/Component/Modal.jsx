@@ -81,7 +81,7 @@ const Wrapper = styled.div`
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
-  z-index: 1; /* Modal의 z-index를 낮게 설정 */
+  z-index: 2; /* Modal의 z-index를 낮게 설정 */
   overflow: hidden; /* 스크롤 비활성화 */
 
   & img {

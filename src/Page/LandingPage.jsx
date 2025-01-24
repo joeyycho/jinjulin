@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Footer from "../Component/Footer";
 import Header from "../Component/Header";
+import Waves from "../Component/Waves";
 
 const MAX_LETTERS = 20; // 글자 띠 최대 개수
 const ADD_DELAY = 100; // 글자 띠 추가 간격 (ms)
@@ -60,6 +61,7 @@ const LandingPage = () => {
         <Header />
       </HeaderWrapper>
       <Page>
+        <Waves />
         <WelcomeText>Welcome to JinJu</WelcomeText>
         {letters.map((letter) => (
           <LetterRing
@@ -107,6 +109,7 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
   position: relative;
+  background-color: #eae0d6;
 `;
 
 const HeaderWrapper = styled.div`
@@ -115,7 +118,7 @@ const HeaderWrapper = styled.div`
   left: 0;
   width: 100%;
   z-index: 10; /* 헤더를 애니메이션 위로 올림 */
-  background-color: rgba(255, 255, 255, 0.8); /* 반투명 헤더 */
+  background-color: #70b8c6;
 `;
 
 const expandAnimation = keyframes`
