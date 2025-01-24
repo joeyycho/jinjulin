@@ -15,9 +15,9 @@ const Nav = () => {
         <NavItem>
           <Link to="/post">게시판</Link>
         </NavItem>
-        <NavItem>
+        <NavItem4>
           <Link to="/notice">공지사항</Link>
-        </NavItem>
+        </NavItem4>
       </NavBar>
     </>
   );
@@ -60,6 +60,29 @@ const NavItem = styled.div`
   text-orientation: mixed;
   width: auto;
   height: auto;
+  /* background-color: white; */
+
+  &:hover {
+    background-color: #636038;
+    color: white;
+    font-weight: 550;
+  }
+`;
+
+const NavItem4 = styled.div`
+  padding: 10px 10px;
+  border: none;
+  font-weight: 440;
+  text-decoration: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  width: auto;
+  height: 70px;
+  /* background-color: white; */
 
   &:hover {
     background-color: #636038;
