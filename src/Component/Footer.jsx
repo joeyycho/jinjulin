@@ -21,7 +21,7 @@ const Footer = () => {
             진주시청 사이트 바로가기
           </a>
         </Text>
-        <Text>© 2025 JinJuLin. All rights reserved.</Text>
+        <Text>© 2025 Badasok. All rights reserved.</Text>
       </Wrapper>
     </>
   );
