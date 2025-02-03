@@ -188,54 +188,8 @@ const RadioContainer = styled.div`
   }
 `;
 
-const Select = styled.select`
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 150px;
-  background-color: white;
-  cursor: pointer;
-  option {
-    font-size: 16px;
-  }
-`;
-
-const Option = styled.option`
-  padding: 10px;
-  font-size: 16px;
-`;
-
-// AnimatedText 컴포넌트 업데이트
-const AnimatedText = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #636038;
-  margin-top: 40px;
-  letter-spacing: 2px;
-  margin-bottom: 40px;
-`;
-
 const Blank = styled.span`
   width: 30px;
-`;
-
-// 애니메이션 키프레임 정의
-const bounceAnimation = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-`;
-
-const AnimatedLetter = styled.span`
-  display: inline-block;
-  animation: ${bounceAnimation} 1.2s ease-in-out infinite;
-  animation-delay: ${(props) => props.delay}s; /* 각 글자에 시간차 적용 */
 `;
 
 const Bar = styled.div`
