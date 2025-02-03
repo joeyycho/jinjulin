@@ -29,7 +29,7 @@ const MagazinePage = () => {
     <Wrapper>
       <Header />
       <Page>
-        <Title>Magazine</Title>
+        <Title>MAGAZINE</Title>
         <p>
           진주를 발견하신 분들을 찾고 있습니다.
           <br />

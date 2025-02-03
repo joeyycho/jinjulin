@@ -31,7 +31,7 @@ const Modal = ({ isOpen, setShowModal }) => {
             지도
           </LinkStyled>
           <LinkStyled to="/magazine" onClick={() => setShowModal(false)}>
-            Magazine
+            매거진
           </LinkStyled>
           <LinkStyled to="/post" onClick={() => setShowModal(false)}>
             게시판

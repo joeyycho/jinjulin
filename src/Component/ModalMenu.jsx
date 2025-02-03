@@ -7,7 +7,7 @@ const ModalMenu = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [selectedData, setSelectedData] = useState(null);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -60,28 +60,36 @@ const ModalMenu = ({ isOpen, onClose }) => {
       style={{ display: isOpen ? "flex" : "none" }}
       onClick={() => {
         onClose(); // 모달 닫기
-        setFilter(""); // 필터 초기화
+        setFilter(null); // 필터 초기화
       }}
     >
-      {" "}
       <Content onClick={(e) => e.stopPropagation()}>
-        <SelectContainer>
-          <Select onChange={handleChange} value={filter}>
-            <Option value="">지금은...</Option>
-            <Option value="lunch">점심</Option>
-            <Option value="dinner">저녁</Option>
-          </Select>
-        </SelectContainer>
+        <RadioContainer>
+          <label>
+            <input
+              type="radio"
+              name="filter"
+              value="lunch"
+              checked={filter === "lunch"}
+              onChange={handleChange}
+            />{" "}
+            점심
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="filter"
+              value="dinner"
+              checked={filter === "dinner"}
+              onChange={handleChange}
+            />{" "}
+            저녁
+          </label>
+        </RadioContainer>
         {isLoading ? (
           <p>Loading...</p>
         ) : !filter ? (
-          <AnimatedText>
-            {Array.from("𓇼⋆.˚버튼을 눌러보세요𓆝 𓆡⋆.˚").map((char, index) => (
-              <AnimatedLetter key={index} delay={index * 0.1}>
-                {char.trim() ? char : "\u00A0"}
-              </AnimatedLetter>
-            ))}
-          </AnimatedText>
+          <span>점심/저녁, 어떤 걸 추천해드릴까요?</span>
         ) : selectedData ? (
           <Wrapper2>
             <Bar>
@@ -115,7 +123,6 @@ const ModalMenu = ({ isOpen, onClose }) => {
 
 export default ModalMenu;
 
-// styled-components
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
@@ -136,6 +143,16 @@ const Content = styled.div`
   width: 90%;
   max-width: 500px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  span {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+    font-family: "Yeongdeok Haeparang";
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 `;
 
 const Text = styled.h2`
@@ -145,8 +162,30 @@ const Text = styled.h2`
   font-family: "Yeongdeok Haeparang";
 `;
 
-const SelectContainer = styled.div`
+const RadioContainer = styled.div`
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-top: 5px;
+  label {
+    font-weight: 600;
+    color: #000000bb;
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked {
+    background-color: #70b8c6; /* 원하는 색상으로 변경 */
+    border-color: #7fc3cc;
+  }
 `;
 
 const Select = styled.select`
