@@ -4,7 +4,7 @@ const DiceIcon = () => {
   return (
     <>
       <svg
-        fill="#000000"
+        fill="#b70000"
         width="25px"
         height="30px"
         viewBox="0 0 32 32"

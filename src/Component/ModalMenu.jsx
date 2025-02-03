@@ -108,7 +108,9 @@ const ModalMenu = ({ isOpen, onClose }) => {
                   }
                 }}
               >
-                <DiceIcon />
+                <DiceIconWrapper>
+                  <DiceIcon />
+                </DiceIconWrapper>{" "}
               </Button>
             </Bar>
             <DataCard data={[selectedData]} />
@@ -213,4 +215,18 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   width: 30px;
+`;
+
+const DiceIconWrapper = styled.div`
+  display: inline-block;
+  animation: bounce 0.5s infinite alternate;
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
 `;
