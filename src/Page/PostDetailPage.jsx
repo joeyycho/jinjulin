@@ -16,7 +16,7 @@ const formatDate = (dateString) => {
   return `${year}/${month}/${day} ${hours}:${minutes}`; // 'yy/mm/dd hh:mm' 형식
 };
 
-const PostDetail = () => {
+const PostDetailPage = () => {
   const { id } = useParams(); // URL에서 id 값 추출
   const navigate = useNavigate(); // useNavigate는 컴포넌트 최상위에서 호출해야 합니다.
   const [post, setPost] = useState([]);
@@ -156,7 +156,7 @@ const PostDetail = () => {
   );
 };
 
-export default PostDetail;
+export default PostDetailPage;
 
 const Wrapper = styled.div`
   color: #636038;

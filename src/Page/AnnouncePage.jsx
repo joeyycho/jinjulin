@@ -20,6 +20,7 @@ const AnnouncePage = () => {
 
     fetchData();
   }, []);
+
   const navigate = useNavigate();
 
   const handleClick = (id) => {

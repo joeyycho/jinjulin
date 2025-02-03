@@ -7,8 +7,10 @@ import AnnouncementDetailPage from './Page/AnnouncementDetailPage';
 import DongPage from './Page/DongPage';
 import PostPage from './Page/PostPage';
 import PostWritePage from './Page/PostWritePage';
-import PostDetail from './Page/PostDetail';
+import PostDetailPage from './Page/PostDetailPage';
 import HomePage from './Page/HomePage';
+import MagazinePage from './Page/MagazinePage';
+import MagazineDetailPage from './Page/MagazineDetailPage';
 
 
 function App() {
@@ -23,7 +25,9 @@ function App() {
         <Route path="/map" element={<DongPage/>} />
         <Route path="/post" element={<PostPage/>} />
         <Route path="/post/write" element={<PostWritePage/>} />
-        <Route path="/post/:id" element={<PostDetail />} />
+        <Route path="/post/:id" element={<PostDetailPage />} />
+        <Route path='/magazine' element={<MagazinePage />} />
+        <Route path='/magazine/:id' element={<MagazineDetailPage />} />
       </Routes>
   </>
   );
