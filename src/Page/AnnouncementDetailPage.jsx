@@ -29,11 +29,14 @@ const AnnouncementDetailPage = () => {
   if (!announcement) {
     return <p>공지사항을 찾을 수 없습니다.</p>;
   }
-  // 텍스트 내의 URL을 <a> 태그로 변환하는 함수 (style 추가)
+  // 이미지 태그가 아닌 일반 URL만 <a> 태그로 변환
   const convertUrlsToLinks = (text) => {
-    const urlPattern = /(https?:\/\/[^\s]+)/g;
+    const urlPattern = /(https?:\/\/[^\s"']+)/g;
     return text.replace(urlPattern, (url) => {
-      // <a> 태그에 style을 추가하여 밑줄 없애기
+      if (url.match(/\.(jpeg|jpg|gif|png|webp)$/)) {
+        // 이미지 URL이면 변환하지 않음
+        return url;
+      }
       return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">${url}</a>`;
     });
   };
