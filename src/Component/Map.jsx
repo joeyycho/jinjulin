@@ -81,13 +81,16 @@ function Map({ setSelectedPlace }) {
 
         const infoWindow = new naver.maps.InfoWindow({
           content: `
+          <div style="box-shadow: 0px 0px 5px #00000088 ; background-color: #fff; border-radius: 5px;">
             <div style="padding:10px 10px 0px 10px; font-weight:bold;">
               ${addressItem.placeName}
             </div>
             <div style="padding:0px 10px 10px 10px; text-align:center;">
               ${addressItem.placeType}
             </div>
+            </div>
           `,
+          borderWidth: 0, // border 제거
         });
 
         naver.maps.Event.addListener(marker, "click", () => {
