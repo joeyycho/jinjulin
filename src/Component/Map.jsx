@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import useGeolocation from "../hooks/useGeolocation.js";
 
-function Map() {
+function Map({ setSelectedPlace }) {
   const mapRef = useRef(null);
   const { currentMyLocation } = useGeolocation();
   const [address, setAddress] = useState([]);
@@ -32,6 +32,7 @@ function Map() {
         ),
         zoom: 14,
         zoomControl: true,
+        logoControl: false,
       };
 
       mapRef.current = new naver.maps.Map("map", mapOptions);
@@ -45,7 +46,7 @@ function Map() {
       };
 
       address.forEach((addressItem) => {
-        const markerColor = colorMap[addressItem.placeType] || "red"; // 기본값 빨강
+        const markerColor = colorMap[addressItem.placeType] || "red";
         const marker = new naver.maps.Marker({
           position: new naver.maps.LatLng(addressItem.lat, addressItem.lng),
           map: mapRef.current,
@@ -73,8 +74,24 @@ function Map() {
             infoWindow.close();
           } else {
             infoWindow.open(mapRef.current, marker);
+            setSelectedPlace(addressItem.placeName); // 클릭한 장소 이름 전달
           }
         });
+      });
+
+      // 현재 위치 마커 추가
+      new naver.maps.Marker({
+        position: new naver.maps.LatLng(
+          currentMyLocation.lat,
+          currentMyLocation.lng
+        ),
+        map: mapRef.current,
+        icon: {
+          url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+          size: new naver.maps.Size(30, 36),
+          scaledSize: new naver.maps.Size(30, 36),
+          anchor: new naver.maps.Point(12, 36),
+        },
       });
     }
   }, [currentMyLocation, address]);
@@ -85,8 +102,8 @@ function Map() {
       style={{
         width: "93%",
         height: "300px",
-        zIndex: "0",
         border: "1.5px #636038 solid",
+        zIndex: 0,
       }}
     />
   );
